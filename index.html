@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <title>Primeiro jogo em javascript</title>
+    <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
     <style>
         * {
             padding: 0;
@@ -15,11 +16,66 @@
             display: block;
             margin: 0 auto;
         }
+         input#botao{
+            cursor: pointer;
+            border-radius: 10px;
+            padding-right: 10px;
+            padding-left: 10px;
+            font-family:'Righteous', cursive; 
+            background-color: black;
+            color: white;
+            margin-top: 25px;
+            margin-left: 640px;
+            font-size: 25px;
+        }
+        input#botao:hover{
+            background-color: white;
+            color: black;
+            transition:2s;
+        }
+        input#botao1{
+            cursor: pointer;
+            border-radius: 10px;
+            margin-top: 10px;
+            margin-left: 639px;
+            background-color: black;
+            color: white;
+            padding-left: 5px;
+            padding-right: 1px;
+            font-size: 24px;
+            font-family:'Righteous', cursive;
+        }
+        input#botao1:hover{
+            background-color: white;
+            color: black;
+            transition: 2s;
+        }
+        input#voltar{
+            cursor: pointer;
+            border-radius: 10px;
+            margin-top: 10px;
+            margin-left: 675px;
+            background-color: black;
+            color: white;
+            padding-left: 6px;
+            padding-right: 5px;
+            font-size: 24px;
+            font-family:'Righteous', cursive;
+        }
+        input#voltar:hover{
+            background-color: white;
+            color: black;
+            transition: 2s;
+        }
+        }
     </style>
 </head>
 
 <body>
     <canvas id="myCanvas" width="480" height="320"></canvas>
+     <input type="button" name="botão" onclick="document.getElementById('myCanvas').style.background = 'black'" value="Clique aqui" id="botao"><br>
+    <input type="button" name="botao" onclick="muda()" value="Mudar fundo" id="botao1">
+    <input type="button" name="botao" onclick="voltar()" value="Voltar" id="voltar">
 
     <script>
         var canvas = document.getElementById("myCanvas");
@@ -30,6 +86,18 @@
         var dx = 2;
         var dy = -2;
         var ballRadius = 12;
+
+         function muda(){
+            var fund = document.getElementById("botao1");
+            document.body.style.background = "black";
+            document.body.style.color = "white";
+        }
+        function voltar(){
+            var volt = document.getElementById("voltar");
+            document.body.style.background = "white";
+            document.body.style.color = "black";
+            var cont = document.getElementById("myCanvas").style.background = "#eee";
+        }
 
         function drawBall() {
             ctx.beginPath();
